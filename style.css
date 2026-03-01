@@ -1,0 +1,244 @@
+/* 1. Brand Variables */
+:root {
+    --bone: #F9F8F5;
+    --obsidian: #1A1A1A;
+    --charcoal: #2D2D2D;
+}
+
+/* 2. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* overlay shown while site is unreleased */
+#coming-soon-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(26,26,26,0.995);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: var(--bone);
+    text-align: center;
+    padding: 20px;
+}
+
+#coming-soon-overlay .overlay-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 3s ease;
+}
+
+#coming-soon-overlay .overlay-content p {
+    font-size: 1rem;
+    opacity: 0.8;
+    animation: fadeIn 5s ease;
+}
+
+#coming-soon-overlay .overlay-content h3 {
+    font-size: 0.7rem;
+    margin-top: 0.8rem;
+    opacity: 0.8;
+    animation: fadeIn 5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bone);
+    color: var(--obsidian);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 3.5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--obsidian);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    margin-left: 40px;
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* 4. Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-folio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    line-height: 0.85;
+    letter-spacing: 0.05rem;
+}
+
+.logo-mono {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 0.8rem;
+    margin-top: 15px;
+    color: var(--charcoal);
+}
+
+.hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 50px;
+    opacity: 0.7;
+    max-width: 500px;
+}
+
+/* 5. Premium Scroll Link */
+.text-link {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: var(--obsidian);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.text-link:hover {
+    opacity: 1;
+    transform: translateY(3px);
+}
+
+/* 6. Showcase */
+.showcase {
+    padding: 120px 10%;
+}
+
+.mockup-frame {
+    width: 100%;
+    height: 80vh;
+    background-color: #EFEEEA;
+    border: 0.5px solid rgba(26, 26, 26, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+.mockup-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5rem;
+    opacity: 0.3;
+}
+
+/* 7. Commission Section */
+.commission {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+}
+
+/* 8. Premium Button */
+.premium-button {
+    background: none;
+    border: 1px solid var(--obsidian);
+    padding: 20px 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+    /* initial subtle pulse to draw attention */
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.premium-button:hover {
+    background-color: var(--obsidian);
+    color: var(--bone);
+    box-shadow: 0 0 15px rgba(26,26,26,0.4);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* glow effect that appears on hover through a pseudo-element */
+.premium-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--obsidian);
+    opacity: 0.2;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.premium-button:hover::after {
+    width: 200%;
+    height: 200%;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* 9. Footer */
+.footer {
+    padding: 100px 10%;
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.4;
+    line-height:1.5rem;
+}
