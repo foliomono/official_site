@@ -18,7 +18,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(26,26,26,0);
+    background: rgba(26,26,26,0.995);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,3 +243,4 @@ body {
     line-height:1.5rem;
 
 }
+
