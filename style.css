@@ -18,7 +18,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(26,26,26,0.995);
+    background: rgba(26,26,26,0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,4 +241,5 @@ body {
     letter-spacing: 0.3rem;
     opacity: 0.4;
     line-height:1.5rem;
+
 }
